@@ -1,0 +1,32 @@
+EyePerture is a command line interface to Apple Aperture, allowing you to
+import an arbitrary set of images to Aperture project. Initially this
+application was designed to work with Eye-Fi (as Eye-Fi Center does not
+support working with Aperture out of the box), however you can use it for
+simple image importing.
+
+EyePerture requires appscript (http://appscript.sourceforge.net/) to work.
+
+Import is based on the following structure:
+	Library
+		[Folder] "Eye-Fi Import"
+			[Project] Current date in YYYY-MM-DD format
+
+You can change the generated folder name or project name with -f or -p options
+respectively.
+
+Usage: ./eyeperture.py [-f FOLDER] [-p PROJECT] [-c|-m|-r] FILES ...
+
+Aperture images importer
+
+Options:
+  --version             show program's version number and exit
+  -h, --help            show this help message and exit
+  -f FOLDER, --folder=FOLDER
+                        Target folder name, default: Eye-Fi Import
+  -p PROJECT, --project=PROJECT
+                        Target project name inside folder, default: YYYY-MM-DD
+
+  Import method:
+    -c, --copying       Import by copying (default)
+    -m, --moving        Import by moving
+    -r, --referencing   Import by referencing
